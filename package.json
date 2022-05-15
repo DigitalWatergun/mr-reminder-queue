@@ -1,0 +1,49 @@
+{
+  "name": "reminder_queue",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "build:dev": "webpack-cli --env mode=development --config ./webpack.config.js",
+    "build:prod": "webpack-cli --env mode=production --config ./webpack.config.js",
+    "start:dev": "npm run build:dev && node ./dist/server.bundle.js",
+    "start:prod": "node dist/server.bundle.js",
+    "prepare": "husky install",
+    "lint": "eslint . --ext .js",
+    "lint-fix": "eslint . --ext .js --ext .jsx --fix"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": "eslint . --ext .js --ext .jsx"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/pubsub": "^2.19.3",
+    "bull": "^4.8.2",
+    "cron": "^1.8.2",
+    "dotenv": "^16.0.0",
+    "googleapis": "^100.0.0",
+    "mongoose": "^6.3.1",
+    "nodemailer": "^6.7.4",
+    "twilio": "^3.76.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.10",
+    "@babel/plugin-transform-runtime": "^7.17.10",
+    "@babel/preset-env": "^7.17.10",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.5",
+    "nodemon": "^2.0.16",
+    "nodemon-webpack-plugin": "^4.7.1",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2",
+    "webpack-node-externals": "^3.0.0",
+    "eslint": "^8.15.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^12.4.1",
+    "prettier": "^2.6.2"
+  }
+}
