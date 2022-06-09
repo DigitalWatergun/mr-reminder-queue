@@ -20,5 +20,7 @@ RUN rm -rf webpack*
 RUN rm -rf .eslint*
 RUN rm -rf .prettierrc
 
+EXPOSE 8080
+
 # Command to start the app 
 CMD [ "npm", "run", "start:prod" ]
